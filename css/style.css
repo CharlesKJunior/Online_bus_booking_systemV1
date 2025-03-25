@@ -1,0 +1,162 @@
+/* Reset & base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #000; /* Page background */
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+  
+  /* Container that holds the diagonal-split card */
+  .container {
+    position: relative;
+    width: 700px;
+    height: 400px;
+    margin: 100px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #8f00ff; /* Purple glow around the container */
+  }
+  
+  /* ===== LOGIN CONTAINER ===== */
+  .login-container {
+    background-color: #111; /* Dark background for the left side */
+  }
+  
+  /* The purple gradient diagonal for the login page */
+  .login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(135deg, #8f00ff 0%, #6a00ff 100%);
+    clip-path: polygon(60% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  
+  /* ===== REGISTER CONTAINER ===== */
+  .register-container {
+    background-color: #111; /* Dark background for the right side (mirrored) */
+  }
+  
+  /* The purple gradient diagonal for the register page (mirrored) */
+  .register-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(135deg, #8f00ff 0%, #6a00ff 100%);
+    clip-path: polygon(0 0, 10% 0, 100% 100%, 0% 100%);
+  }
+  
+  /* Common form panel styling (login-form or register-form) */
+  .login-form,
+  .register-form {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  /* Positioning for login and register forms specifically */
+  .login-form {
+    left: 0; /* On the left side for the login page */
+  }
+  
+  .register-form {
+    right: 0; /* On the right side for the register page */
+  }
+  
+  /* Common welcome text styling */
+  .welcome-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .login-container .welcome-text {
+    right: 0; /* Right side for the login page */
+  }
+  
+  .register-container .welcome-text {
+    left: 0; /* Left side for the register page */
+  }
+  
+  /* Headings & paragraphs */
+  h1, h2 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  /* Input group styling with underlined fields */
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px 0;              /* Reduced vertical padding */
+    background: transparent;       /* Transparent background */
+    border: none;
+    border-bottom: 2px solid #fff; /* Underline only */
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .input-group input::placeholder {
+    color: #bbb;
+  }
+  
+  .input-group input:focus {
+    border-bottom-color: #8f00ff; /* Change underline color on focus */
+    outline: none;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #8f00ff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #6a00ff;
+  }
+  
+  /* Links */
+  a {
+    color: #8f00ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
